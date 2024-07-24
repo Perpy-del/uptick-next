@@ -3,6 +3,7 @@ import { Playfair_Display, Roboto } from 'next/font/google'
 import './globals.css';
 import { ThemeProvider } from '../components/theme-provider';
 import NavBar from '@/components/NavBar';
+import { ModeToggle } from '@/components/ModeToggle';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -35,8 +36,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
           {children}
+          <ModeToggle />
         </ThemeProvider>
       </body>
     </html>
