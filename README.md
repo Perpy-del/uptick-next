@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Uptick Next Project
 
-## Getting Started
+### Project
 
-First, run the development server:
+Rebuild your [frontend application](https://github.com/Perpy-del/uptick-react) using a server side framework like Next.JS, Nuxt.js or Angular Universal, ensuring server-side rendering for improved performance and SEO. Implement data fetching on the server and ensure synchronization with client-side data fetching. Focus on maintaining routing functionality and component/page mapping as per the application requirements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Implement functionality.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Enable users to create and log into their account.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Allow users to create and update blog posts.
 
-## Learn More
+- Allow users to fetch all posts and get details of a single post.
 
-To learn more about Next.js, take a look at the following resources:
+- The application should fetch the data from the [backend API](https://github.com/Perpy-del/uptick_sqltomdb).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Provide an option to delete blog posts from the list.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Technologies Used:
+-   [NextJS](https://nextjs.org/docs) - Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for 
+    additional features and optimizations.
+-   [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.
+-   [Shadcn](https://ui.shadcn.com/docs/installation) - Beautifully designed reusable components that you can copy and paste into your application.
 
-## Deploy on Vercel
+### Browser Storage
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - localStorage is used to save key/value pairs in the browser. This was used to store the user name.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### *Thank you for reading*
