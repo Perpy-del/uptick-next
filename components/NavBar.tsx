@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Search } from 'lucide-react';
 import { Button } from './ui/button';
-import { categoriesData } from '@/data';
+// import { categoriesData } from '@/data';
+import { useUptickHook } from '@/hooks/useUptickHook';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { toast } from './ui/use-toast';
 
 const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setActiveCategory: any}) => {
-    const [user, setUser] = useState(null);
+  const { user, logout, categoriesData, getCategory, getAllBlogs } = useUptickHook();
+  const [showButton, setShowButton] = useState<boolean>(false);
   const router = useRouter();
 
   return (
@@ -29,14 +32,14 @@ const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setAc
         <div className=" flex items-center gap-2 flex-col md:flex-row">
           {user ? (
             <p>
-              {/* Welcome, {user?.data?.firstName} {user?.data?.lastName} */}
+              Welcome, {user?.data?.firstName} {user?.data?.lastName}
             </p>
           ) : (
             <Button onClick={() => router.push('/signup')}>Sign up</Button>
           )}
           {user && (
             <Button
-            //   onClick={logout}
+              onClick={logout}
               className="text-red-700 dark:text-red-700 font-bold"
             >
               Log out
@@ -54,31 +57,31 @@ const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setAc
               : ''
           }`}
           key={index}
-        //   onClick={() => {
-        //     if (user) {
-        //       setActiveCategory(category);
-        //       getCategory(category);
-        //       setShowButton(true);
-        //     } else {
-        //       toast({ description: 'Please login to view blogs' });
-        //     }
-        //   }}
+          onClick={() => {
+            if (user) {
+              setActiveCategory(category);
+              getCategory(category);
+              setShowButton(true);
+            } else {
+              toast({ description: 'Please login to view blogs' });
+            }
+         }}
         >
           {category}
         </div>
       ))}
-      {/* {showButton && (
+      {showButton && (
         <Button
           onClick={() => {
-            getAllBlogs();
+            // getAllBlogs();
+            setActiveCategory(null);
             setShowButton(false);
           }}
         >
           Back Home
         </Button>
-      )} */}
+      )}
     </div>
-    {/* <ModeToggle /> */}
   </div>
   )
 }
