@@ -3,13 +3,12 @@
 import { useRouter } from 'next/navigation'
 import { Search } from 'lucide-react';
 import { Button } from './ui/button';
-// import { categoriesData } from '@/data';
 import { useUptickHook } from '@/hooks/useUptickHook';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { toast } from './ui/use-toast';
 
 const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setActiveCategory: any}) => {
-  const { user, logout, categoriesData, getCategory, getAllBlogs } = useUptickHook();
+  const { user, logout, categoriesData, getCategory } = useUptickHook();
   const [showButton, setShowButton] = useState<boolean>(false);
   const router = useRouter();
 
@@ -49,7 +48,7 @@ const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setAc
       </div>
     </div>
     <div className="h-11 border-t border-b flex items-center gap-3 md:gap-0 md:justify-between mb-5 overflow-scroll md:overflow-auto">
-      {categoriesData.map((category: string, index: number) => (
+      {categoriesData?.map((category: string, index: number) => (
         <div
           className={`cursor-pointer font-sans dark:text-gray-400 text-xs md:text-base hover:text-[17px] hover:dark:text-white transition-all transform duration-300 ${
             activeCategory === category
@@ -64,6 +63,7 @@ const NavBar = ({activeCategory, setActiveCategory}: {activeCategory: any, setAc
               setShowButton(true);
             } else {
               toast({ description: 'Please login to view blogs' });
+              return;
             }
          }}
         >
