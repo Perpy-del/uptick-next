@@ -1,11 +1,8 @@
 import { UptickContext } from '@/context/UptickContext';
 import { useContext } from 'react';
-import { UseUptickHookReturn } from './UseUptickHookReturns';
 
-export const useUptickHook = (): UseUptickHookReturn => {
+export const useUptickHook = () => {
   const context = useContext(UptickContext);
-
-  throw new Error("Not implemented");
 
   return context;
 };
