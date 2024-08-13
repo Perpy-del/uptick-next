@@ -24,6 +24,22 @@ Rebuild your [frontend application](https://github.com/Perpy-del/uptick-react) u
 -   [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.
 -   [Shadcn](https://ui.shadcn.com/docs/installation) - Beautifully designed reusable components that you can copy and paste into your application.
 
+### Containerization using Docker
+
+- Docker was used to containerize the application both for development and production build
+
+For Development run,
+
+- `docker-compose -f docker-compose-dev.yml up -d --build`
+
+View will be on: **http://localhost:3000**
+
+For Production, run
+
+- `docker-compose -f docker-compose-prod.yml up -d --build`
+
+View will be on: **http://localhost:8080**
+
 ### Browser Storage
 - [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - localStorage is used to save key/value pairs in the browser. This was used to store the user name.
 
