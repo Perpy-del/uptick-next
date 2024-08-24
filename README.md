@@ -28,6 +28,11 @@ Rebuild your [frontend application](https://github.com/Perpy-del/uptick-react) u
 
 - Docker was used to containerize the application both for development and production build
 
+### Deployment on AWS
+
+- Deployed using AWS amplfy [AWS Amplify](https://docs.amplify.aws/)
+[Uptick Blog Link](https://main.d3s3jzxjf6t1dp.amplifyapp.com)
+
 For Development run,
 
 - `docker-compose -f docker-compose-dev.yml up -d --build`
